@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da139520-29e2-4bf2-bf83-bab309186b96" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aura.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Uproject.Aura.executor": "Run",
+    "Uproject.Aura.executor": "Debug",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -145,6 +144,7 @@
       <workItem from="1712176703930" duration="1097000" />
       <workItem from="1712177831891" duration="2318000" />
       <workItem from="1712180188401" duration="2045000" />
+      <workItem from="1712190608507" duration="628000" />
     </task>
     <servers />
   </component>
