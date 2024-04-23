@@ -6,13 +6,6 @@
 #include "UI/WidgetController/AuraWidgetController.h"
 #include "OverlayWidgetController.generated.h"
 
-class UAuraUserWidget;
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONHealthChangedSignature, float, NewHealth);		//Signature = delegate type
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONMaxHealthChangedSignature, float, NewMaxHealth);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONManaChangedSignature, float, NewMana);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONMaxManaChangedSignature, float, NewMaxMana);
-
 USTRUCT(BlueprintType)
 struct FUIWidgetRow : public FTableRowBase
 {
@@ -25,11 +18,20 @@ struct FUIWidgetRow : public FTableRowBase
 	FText Message = FText();
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TSubclassOf<UAuraUserWidget> MessageWidget;
+	TSubclassOf<class UAuraUserWidget> MessageWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UTexture2D* Image = nullptr;
 };
+
+class UAuraUserWidget;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONHealthChangedSignature, float, NewHealth);		//Signature = delegate type
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONMaxHealthChangedSignature, float, NewMaxHealth);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONManaChangedSignature, float, NewMana);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FONMaxManaChangedSignature, float, NewMaxMana);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMeesageWidgetRowSignature, FUIWidgetRow, Row);
 
 /**
  * 
@@ -53,6 +55,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category="GAS|Attributes")
 	FONMaxManaChangedSignature OnMaxManaChanged;
+
+	UPROPERTY(BlueprintAssignable, Category="GAS|Messages")
+	FMeesageWidgetRowSignature MessageWidgetRowDelegate;
 
 protected:
 
